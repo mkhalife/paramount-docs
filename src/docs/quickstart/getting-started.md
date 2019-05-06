@@ -1,5 +1,5 @@
 ---
-path: "/getting-started"
+path: "/quickstart/getting-started"
 title: "Getting Started"
 ---
 ## What's this?
