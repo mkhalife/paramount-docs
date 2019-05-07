@@ -5,22 +5,41 @@ import Helmet from 'react-helmet'
 import Chrome from '../components/Chrome'
 import Header from '../components/Header'
 import './index.css'
+import { convertToDirTree } from '../utils/helpers'
 
-const TemplateWrapper = ({ children }) => (
-  <Chrome header={<Header />}>
-    <Helmet
-      title="Welcome to the docs!"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    {children()}
-  </Chrome>
-)
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+export default ({ children, data }) => {
+  const treeData = data.allMarkdownRemark.edges.map(({ node }) => (
+    node.fileAbsolutePath.split("src/docs")[1]
+  ));
+  const tree = convertToDirTree(treeData);
+  return (
+    <Chrome header={<Header />} tree={tree}>
+      <Helmet
+        title="Paramount WorkPlace Docs"
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' },
+        ]}
+      />
+      {children()}
+    </Chrome>
+  )
 }
 
-export default TemplateWrapper
+export const pageQuery = graphql`
+  query Docs {
+    allMarkdownRemark {
+       totalCount
+       edges {
+         node {
+           id
+           frontmatter {
+             path
+             title
+           }
+           fileAbsolutePath
+         }
+       }
+     }
+   }
+`

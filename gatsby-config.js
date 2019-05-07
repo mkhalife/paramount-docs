@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Welcome to the docs!',
+    title: 'Paramount WorkPlace Docs',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

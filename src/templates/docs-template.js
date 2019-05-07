@@ -16,7 +16,7 @@ class Template extends Component {
     const { markdownRemark: page } = this.props.data;
     return (
       <div>
-        <Helmet title={`Docs | ${page.frontmatter.title}`} />
+        <Helmet title={`${page.frontmatter.title}`} />
         <div className="page">
           <header>
             <h1>{page.frontmatter.title}</h1>

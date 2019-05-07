@@ -55,11 +55,11 @@ const Page = styled.div`
   flex: 1;
 `
 
-const Chrome = ({ children, header }) => (
+const Chrome = ({ children, header, tree }) => (
   <Container>
     {header}
     <Content>
-      <Sidebar />
+      <Sidebar tree={tree} />
       <Main>
         <Page>
         {children}

@@ -17,19 +17,17 @@ const SidebarContainer = styled.div`
   }
 `
 
-const Sidebar = () => (
+const Sidebar = ({tree}) => (
   <SidebarContainer>
     {process.env.GATSBY_DOCSEARCH_API_KEY && process.env.GATSBY_DOCSEARCH_INDEX && (
       <SearchBox />
     )}
     <header>Quick start</header>
     <ul>
-      <li><Link to="/getting-started">Getting Started</Link></li>
-    </ul>
-    <header>About</header>
-    <ul>
-      <li><Link to="/about">About us</Link></li>
-      <li><Link to="/about2">About us2</Link></li>
+      {tree.map((dir) => {
+        if (dir.type === "file")
+          return <li key={dir.path}><Link to={dir.path}>{dir.path}</Link></li>
+      })}
     </ul>
   </SidebarContainer>
 )

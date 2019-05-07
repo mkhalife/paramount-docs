@@ -1,5 +1,5 @@
 ---
-path: "/about2"
+path: "/how/to/about2"
 title: "About us2"
 ---
 ## What's that?
