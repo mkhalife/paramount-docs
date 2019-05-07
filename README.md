@@ -8,10 +8,13 @@ This docs-as-code example is built on top of [Gatsby.js](https://www.gatsbyjs.or
 
 ## Getting started
 
+If using windows, make sure you have the windows prerequisites installed. Follow instructions here: https://www.gatsbyjs.org/docs/gatsby-on-windows/
+ ```npm install windows-build-tools -g```
+
 Run the following commands in your CLI to serve your website locally.
 
 ```bash
-git clone git@github.com:squadlytics/docs-as-code-starterkit.git
+git clone git@github.com:mkhalife/paramount-docs.git
 cd docs-as-code-starterkit
 npm install
 gatsby develop
@@ -49,8 +52,3 @@ Check https://www.gatsbyjs.org/docs/environment-variables/ to know more about se
 ## Deploying
 
 You can easily deploy your docs for free with [Netlify](https://netlify.com). Check out [the tutorial](https://medium.com/squadlytics/how-we-switched-to-documentation-as-code-with-gatsby-js-and-netlify-part-1-2-1f57ad732a05) if you want a step by step guide.
-
-## Contributing
-
-Please feel free to submit contribution to this repository by forking it and submitting a pull request.
-
