@@ -9,7 +9,9 @@ This docs-as-code example is built on top of [Gatsby.js](https://www.gatsbyjs.or
 ## Getting started
 
 If using windows, make sure you have the windows prerequisites installed. Follow instructions here: https://www.gatsbyjs.org/docs/gatsby-on-windows/
- ```npm install windows-build-tools -g```
+ ```
+ npm install windows-build-tools -g
+ ```
 
 Run the following commands in your CLI to serve your website locally.
 
